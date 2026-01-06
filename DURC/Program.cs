@@ -1,3 +1,8 @@
+using DURC.Data;
+using Microsoft.AspNetCore.Hosting.Server;
+using Microsoft.EntityFrameworkCore;
+using System.Threading;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -6,8 +11,13 @@ builder.Services.AddSwaggerGen();
 
 if (builder.Environment.IsDevelopment())
 {
+     //SQL Server for local development
+    builder.Services.AddDbContext<ApplicationDbContext>(options => options
+        .UseSqlServer(builder.Configuration.GetConnectionString("constr")));
 
 }
+
+
 
 var app = builder.Build();
 
