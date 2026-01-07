@@ -4,8 +4,12 @@ namespace DURC.Data;
 
 public class ApplicationDbContext : DbContext
 {
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> option) : base(option)
+    {
+        
+    }
 
-    //public DbSet<Product> Products { get; set; }
+    public DbSet<Product> Products { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
