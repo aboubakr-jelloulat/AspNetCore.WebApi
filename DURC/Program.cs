@@ -1,4 +1,5 @@
 using DURC.Data;
+using DURC.Middlewares;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
@@ -29,6 +30,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+
+app.UseMiddleware<RateLimitingMiddleware>();
+app.UseMiddleware<ProfilingMiddleware>();
 
 app.MapControllers();
 app.Run();
