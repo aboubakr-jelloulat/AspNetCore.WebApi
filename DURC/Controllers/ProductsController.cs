@@ -37,7 +37,7 @@ public class ProductsController : ControllerBase
     public  ActionResult<IEnumerable<Product>> Get()
     {
         var records = _db.Products.ToList();
-        if (records is null)
+        if (!records.Any())
             return NotFound();
 
         return Ok(records);
