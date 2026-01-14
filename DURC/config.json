@@ -1,0 +1,12 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "ConnectionStrings": {
+    "constr": "Server = 127.0.0.1 ; Database = flayer ; Integrated Security = SSPI ; TrustServerCertificate = True;"
+  }
+}
