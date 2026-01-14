@@ -13,7 +13,7 @@ builder.Services.AddControllers(options => {
     options.Filters.Add<LogActiviteFilter>();
     }
 );
-
+gi 
 
 
 builder.Services.AddEndpointsApiExplorer();
